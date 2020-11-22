@@ -1,29 +1,17 @@
 # cool-ui
 
-## Project setup
-```
-npm install
-```
+## 项目简介
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+一个基于 Vue3.0 的 UI 组件库，使用了 Typescript 和 less 进行编写
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### 环境
 
-### Run your unit tests
-```
-npm run test:unit
-```
+Node14.15.0、Vue3.0.2、Typescript4.0.3
 
-### Lints and fixes files
-```
-npm run lint
-```
+## 项目启动
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```shell
+yarn install / npm install
+
+yarn serve / npm run serve
+```

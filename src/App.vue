@@ -1,6 +1,5 @@
 <template>
   <div class="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
     <my-button type="primary" @click="clickButton" round>确定按钮</my-button>
     <my-select @change="changeSelect" editable v-model="selected">
       <my-option
@@ -109,14 +108,6 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 .app {
   > * {
     margin-right: 20px;
