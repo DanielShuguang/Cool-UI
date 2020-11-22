@@ -1,0 +1,36 @@
+.cool-btn {
+  height: 39px;
+  min-width: 90px;
+  padding: 0 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+  &.primary {
+    background: @baseColor;
+    &:hover {
+      background: #66b1ff;
+    }
+  }
+  &.alert {
+    background: #f56c6c;
+    &:hover {
+      background: #f78989;
+    }
+  }
+  &.round {
+    border-radius: 39px;
+  }
+  &.default {
+    background: #fff;
+    color: @baseColor;
+    border: 1px solid @baseColor;
+  }
+  &:disabled {
+    background: @disabledBack !important;
+    color: rgb(188, 190, 194) !important;
+    border: 1px solid #a5a2a2 !important;
+    cursor: not-allowed;
+  }
+}

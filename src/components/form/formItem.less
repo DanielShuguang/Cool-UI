@@ -1,0 +1,29 @@
+.cool-form-item {
+  margin-bottom: 22px;
+  &::after {
+    display: table;
+    content: '';
+  }
+  .cool-form-item__label {
+    display: inline-block;
+    padding: 0 12px 0 0;
+    font-size: 14px;
+    color: #606266;
+    line-height: 40px;
+    text-align: right;
+    box-sizing: border-box;
+  }
+  .cool-form-item__content {
+    position: relative;
+    display: inline-block;
+    line-height: 40px;
+    font-size: 14px;
+    &::before {
+      display: table;
+      content: "";
+    }
+    &::after {
+      clear: both;
+    }
+  }
+}
