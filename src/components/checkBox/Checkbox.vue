@@ -32,20 +32,20 @@ export default defineComponent({
     const selectCallback = inject<SelectCallbackFn>('selectCallback')
     const selected = inject<Ref<SelectType[]>>('selected')
     const isChecked = computed(() => {
-      return selected ? selected.value.includes(props.label) : props.modelValue
+      return selected ? selected.value.includes(props.label) : props.value
     })
 
     /** 点击当前复选框 */
     const checkClick = () => {
       selectCallback
         ? selectCallback(props.label)
-        : ctx.emit('update:modelValue', !props.modelValue)
+        : ctx.emit('update:value', !props.value)
     }
 
     return { isChecked, checkClick }
   },
   props: {
-    modelValue: Boolean,
+    value: Boolean,
     disabled: { type: Boolean, default: false },
     label: { type: String as PropType<SelectType>, required: true }
   }

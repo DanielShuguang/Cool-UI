@@ -1,0 +1,31 @@
+.cool-rate {
+  height: 20px;
+  line-height: 1;
+  .cool-rate__item {
+    display: inline-block;
+    position: relative;
+    font-size: 0;
+    vertical-align: middle;
+    cursor: pointer;
+    .cool-rate__icon {
+      display: inline-block;
+      position: relative;
+      font-size: 18px;
+      margin-right: 6px;
+      color: #c6d1de;
+      transition: 0.3s;
+      &.hover {
+        color: #f7ba2a;
+        transform: scale(1.15);
+      }
+      &.active {
+        color: #f7ba2a;
+      }
+    }
+  }
+  .cool-rate__text {
+    color: #1f2d3d;
+    font-size: 14px;
+    vertical-align: middle;
+  }
+}

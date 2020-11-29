@@ -2,7 +2,7 @@
   <div :class="['cool-input', { disabled }]">
     <input
       :class="['cool-input_inner', { disabled }]"
-      :value="modelValue"
+      :value="value"
       :readonly="readOnly"
       :placeholder="placeholder"
       :disabled="disabled"
@@ -25,13 +25,13 @@ export default defineComponent({
     const changeInput = (ev: InputEvent) => {
       const target = ev.target as HTMLInputElement
       const value = target.value
-      ctx.emit('update:modelValue', value)
+      ctx.emit('update:value', value)
     }
     return { changeInput }
   },
   props: {
     // 输入框内容
-    modelValue: { type: String, required: true },
+    value: { type: String, required: true },
     // 是否展示图标
     showIcon: { type: Boolean, default: false },
     placeholder: { type: String, required: false },

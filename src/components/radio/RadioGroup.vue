@@ -43,7 +43,7 @@ export default defineComponent({
      * @param target 选择的目标——子组件的返回
      */
     const selectCallback = (target: SelectedLabel) => {
-      ctx.emit('update:modelValue', target)
+      ctx.emit('update:value', target)
       selected.value = target
     }
 
@@ -56,7 +56,7 @@ export default defineComponent({
     return { hasCurrentData }
   },
   props: {
-    modelValue: { type: String, required: true }
+    value: { type: String, required: true }
   }
 })
 </script>

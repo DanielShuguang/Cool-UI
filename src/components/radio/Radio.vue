@@ -36,7 +36,7 @@ export default defineComponent({
     const isChecked = computed(() => {
       return selected && selected.value
         ? selected.value === props.label
-        : props.modelValue === props.label
+        : props.value === props.label
     })
 
     /** 点击勾选当前框 */
@@ -44,13 +44,13 @@ export default defineComponent({
       if (props.disabled) return
       selectCallback
         ? selectCallback(props.label)
-        : ctx.emit('update:modelValue', props.label)
+        : ctx.emit('update:value', props.label)
     }
 
     return { isChecked, handleCheck }
   },
   props: {
-    modelValue: String,
+    value: String,
     label: { type: String as PropType<SelectedLabel>, required: true },
     disabled: { type: Boolean, default: false }
   }

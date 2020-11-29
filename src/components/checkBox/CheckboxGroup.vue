@@ -23,7 +23,7 @@ export default defineComponent({
       tagIndex !== -1
         ? selected.value.push(target)
         : selected.value.splice(tagIndex, 1)
-      ctx.emit('update:modelValue', selected.value)
+      ctx.emit('update:value', selected.value)
     }
 
     provide<SelectCallbackFn>('selectCallback', selectCallback)
@@ -31,7 +31,7 @@ export default defineComponent({
     return {}
   },
   props: {
-    modelValue: Array as PropType<SelectType[]>
+    value: Array as PropType<SelectType[]>
   }
 })
 </script>

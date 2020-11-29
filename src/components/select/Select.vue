@@ -114,7 +114,7 @@ export default defineComponent({
     /** 检查下拉数据是否可用 */
     const dataCheck = () => {
       hasCurrentData.value = false
-      if (!ctx.slots.default || ctx.slots.default.length > 1) return
+      if (!ctx.slots.default || ctx.slots.default().length > 1) return
       const slot = ctx.slots.default()[0].children as VNodeArrayChildren
       if (!slot.length) return
       hasCurrentData.value = slotCheck()
@@ -126,7 +126,7 @@ export default defineComponent({
     const selectOption = (target: OptionProps) => {
       selected.value = target.value
       selected.label = target.label
-      ctx.emit('update:modelValue', target.value)
+      ctx.emit('update:value', target.value)
       ctx.emit('change', target.value)
       showList.value = false
     }
@@ -161,12 +161,12 @@ export default defineComponent({
         item => item.label.toString() === label.toString()
       )
       if (result) {
-        ctx.emit('update:modelValue', result.value)
+        ctx.emit('update:value', result.value)
         Object.assign(selected, result)
       } else {
         selected.value = ''
         selected.label = ''
-        ctx.emit('update:modelValue', '')
+        ctx.emit('update:value', '')
       }
     }
     /**
@@ -218,7 +218,7 @@ export default defineComponent({
     onMounted(() => {
       nextTick(() => {
         dataCheck()
-        props.modelValue && inputChange(props.modelValue)
+        props.value && inputChange(props.value)
       })
     })
 
@@ -238,7 +238,7 @@ export default defineComponent({
   },
   props: {
     placeholder: String,
-    modelValue: String,
+    value: String,
     // 输入框是否可写
     editable: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false }
